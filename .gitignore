@@ -1,0 +1,27 @@
+# Gradle stuff
+.gradle/
+
+# IDE Stuff
+.idea/
+src/main/cpp/.vscode/
+
+# Build related
+*.so
+build/
+out/
+TestPlugin/build/
+TestPlugin/out/
+src/main/cpp/lib/
+src/main/cpp/build/
+src/main/resources/res/natives/
+
+external/opencv-opencv-539f065/
+
+# Runtime stuff
+resources/
+plugins/
+settings/
+settings.json
+
+# Sometimes things crash
+*.log

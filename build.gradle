@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    //id 'org.javamodularity.moduleplugin' version '1.6.0'
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
+}
+
+group 'net.gudenau.discord'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 13
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile ('net.dv8tion:JDA:4.1.1_107') {
+        exclude module: 'opus-java'
+    }
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation files('external/opencv-opencv-539f065/build/bin/opencv-420.jar')
+}
