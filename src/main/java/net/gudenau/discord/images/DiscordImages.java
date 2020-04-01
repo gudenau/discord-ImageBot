@@ -29,7 +29,7 @@ import static net.gudenau.discord.images.magick.Magick.MAGICK_OPT_NO_SIGNAL_HAND
  * @since 1.0.0
  * */
 public class DiscordImages{
-    public static final String BOT_VERSION = "1.0.0";
+    public static final String BOT_VERSION = "1.0.1";
     
     public static void main(String[] arguments){
         Natives.loadNatives();
