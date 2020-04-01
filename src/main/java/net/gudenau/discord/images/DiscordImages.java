@@ -59,7 +59,7 @@ public class DiscordImages{
                 MAGICK_OPT_NO_SIGNAL_HANDER,
                 exception
             );
-            if(exception.severity() == 0){
+            if(exception.severity() != 0){
                 throw exception.createException();
             }
         }
