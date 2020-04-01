@@ -60,6 +60,9 @@ public class CommandListener{
         // Most everything should be inherently thread safe anyway....
         MiscUtil.runLater(()->{
             var author = event.getMember();
+            if(author == null){
+                return;
+            }
             if(author.getUser().isBot()){
                 return;
             }
