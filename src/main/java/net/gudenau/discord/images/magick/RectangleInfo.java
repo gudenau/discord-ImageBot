@@ -2,7 +2,7 @@ package net.gudenau.discord.images.magick;
 
 import net.gudenau.discord.images.internal.NativeObject;
 
-public class RectangleInfo extends NativeObject{
+public final class RectangleInfo extends NativeObject{
     public RectangleInfo(){
         super(init(), RectangleInfo::free);
     }

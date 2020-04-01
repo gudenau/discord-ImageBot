@@ -2,7 +2,7 @@ package net.gudenau.discord.images.magick;
 
 import net.gudenau.discord.images.internal.NativeObject;
 
-public class AffineMatrix extends NativeObject{
+public final class AffineMatrix extends NativeObject{
     public AffineMatrix(){
         super(init(), AffineMatrix::free);
     }
