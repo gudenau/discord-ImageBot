@@ -43,14 +43,14 @@ public class FlagCommand implements IImageCommand{
             
             Image.Pointer list;
             {
-                var initial = Fx.WaveImage(image, amplitude, wavelength, exception);
+                var initial = exception.check(Fx.WaveImage(image, amplitude, wavelength, exception));
                 list = new Image.Pointer(initial);
             }
             
             for(int i = 1; i < FRAME_COUNT; i++){
-                var rollA = Transform.RollImage(image, rollAmount * i, 0, exception);
-                var wave = Fx.WaveImage(rollA, amplitude, wavelength, exception);
-                var result = Transform.RollImage(wave, -rollAmount * i, 0, exception);
+                var rollA = exception.check(Transform.RollImage(image, rollAmount * i, 0, exception));
+                var wave = exception.check(Fx.WaveImage(rollA, amplitude, wavelength, exception));
+                var result = exception.check(Transform.RollImage(wave, -rollAmount * i, 0, exception));
                 
                 Image.DestroyImage(rollA);
                 Image.DestroyImage(wave);

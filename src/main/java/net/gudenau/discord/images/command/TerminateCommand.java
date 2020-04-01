@@ -17,7 +17,7 @@ import net.gudenau.discord.images.util.MiscUtil;
 public class TerminateCommand implements IOwnerCommand{
     @Nonnull
     @Override
-    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
         MiscUtil.runLater(()->{
             try{
                 Thread.sleep(1000);

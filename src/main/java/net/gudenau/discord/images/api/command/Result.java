@@ -364,12 +364,12 @@ public abstract class Result{
                     imageData = ImageUtil.writeImage(image);
                 }else{
                     try(var exception = new ExceptionInfo()){
-                        var scaledImage = Resize.ThumbnailImage(
+                        var scaledImage = exception.check(Resize.ThumbnailImage(
                             image,
                             Math.round(image.columns() * scale),
                             Math.round(image.rows() * scale),
                             exception
-                        );
+                        ));
                         try{
                             imageData = ImageUtil.writeImage(scaledImage);
                         }finally{

@@ -22,7 +22,7 @@ public interface IImageCommand extends ICommand, IPipeCommand{
     
     @Nonnull
     @Override
-    default Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+    default Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
         URL url = null;
         if(!arguments.isEmpty()){
             String argument = arguments.get(0);

@@ -20,7 +20,7 @@ import net.gudenau.discord.images.util.NetworkUtil;
 public class UpdateAvatarCommand implements IOwnerCommand{
     @Nonnull
     @Override
-    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
         var manager = channel.getJDA().getSelfUser().getManager();
         String url;
         if(arguments.isEmpty()){

@@ -101,7 +101,7 @@ public abstract class SimpleImageCommand implements IImageCommand{
             @Override
             Image execute(Image image){
                 try(var exception = new ExceptionInfo()){
-                    return function.apply(image, exception);
+                    return exception.check(function.apply(image, exception));
                 }
             }
         };

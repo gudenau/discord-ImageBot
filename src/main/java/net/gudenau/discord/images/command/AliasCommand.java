@@ -21,7 +21,7 @@ public class AliasCommand implements ICommand{
     
     @Nonnull
     @Override
-    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
         if(arguments.isEmpty()){
             Map<String, List<String>> aliasMap = new HashMap<>();
             aliases.forEach((k, v)->{
@@ -81,7 +81,7 @@ public class AliasCommand implements ICommand{
     
         @Nonnull
         @Override
-        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
             if(arguments.size() == 1){
                 var commandName = arguments.get(0);
                 var command = commandManager.getCommand(commandName);

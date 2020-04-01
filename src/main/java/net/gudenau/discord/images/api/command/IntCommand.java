@@ -68,7 +68,7 @@ public abstract class IntCommand implements IImageCommand{
                 }
     
                 try(var exception = new ExceptionInfo()){
-                    var newImage = function.invoke(image, int1, exception);
+                    var newImage = exception.check(function.invoke(image, int1, exception));
                     try{
                         return Result.image(newImage);
                     }finally{
@@ -115,7 +115,7 @@ public abstract class IntCommand implements IImageCommand{
                 }
                 
                 try(var exception = new ExceptionInfo()){
-                    var newImage = function.invoke(image, int1, int2, exception);
+                    var newImage = exception.check(function.invoke(image, int1, int2, exception));
                     try{
                         return Result.image(newImage);
                     }finally{

@@ -48,6 +48,9 @@ public class EyesCommand implements IImageCommand{
                 image.columns(), image.rows(),
                 exception
             );
+            if(exception.severity() != 0){
+                throw exception.createException();
+            }
             
             var ji = new java.awt.image.BufferedImage(image.columns(), image.rows(), java.awt.image.BufferedImage.TYPE_4BYTE_ABGR);
             int[] row = new int[image.columns()];

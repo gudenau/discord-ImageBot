@@ -55,6 +55,9 @@ public class ImageUtil{
             buffer = NetworkUtil.downloadToMemory(url);
             var imageInfo = Image.CloneImageInfo(null);
             var image = Blob.BlobToImage(imageInfo, buffer, exception);
+            if(exception.severity() != 0){
+                throw exception.createException();
+            }
             image.client_data(imageInfo);
             return image;
         }catch(Throwable t){
@@ -89,6 +92,9 @@ public class ImageUtil{
             try(var exception = new ExceptionInfo()){
                 var imageInfo = Image.CloneImageInfo(null);
                 var image = Blob.BlobToImage(imageInfo, buffer, exception);
+                if(exception.severity() != 0){
+                    throw exception.createException();
+                }
                 image.client_data(imageInfo);
                 return image;
             }finally{
@@ -117,6 +123,9 @@ public class ImageUtil{
                 imageInfo = Image.CloneImageInfo(null);
             }
             var blob = Blob.ImageToBlob(imageInfo, image, 0, exception);
+            if(exception.severity() != 0){
+                throw exception.createException();
+            }
             byte[] buffer = new byte[blob.capacity()];
             blob.get(0, buffer);
             Image.DestroyImageInfo(imageInfo);
@@ -140,6 +149,9 @@ public class ImageUtil{
             var stream = Files.newOutputStream(path)
         ){
             var blob = Blob.ImageToBlob(image.client_data(), image, 0, exception);
+            if(exception.severity() != 0){
+                throw exception.createException();
+            }
             byte[] buffer = new byte[blob.capacity()];
             blob.get(0, buffer);
             stream.write(buffer);

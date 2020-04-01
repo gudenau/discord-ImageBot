@@ -1,5 +1,6 @@
 package net.gudenau.discord.images.util;
 
+import io.sentry.Sentry;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,7 +33,14 @@ public class MiscUtil{
      * @since 1.0.0
      * */
     public static void runLater(@Nonnull Runnable runnable){
-        THREAD_POOL.submit(runnable);
+        THREAD_POOL.submit(()->{
+            try{
+                runnable.run();
+            }catch(Throwable t){
+                Sentry.capture(t);
+                t.printStackTrace();
+            }
+        });
     }
     
     /**

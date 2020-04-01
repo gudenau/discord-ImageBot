@@ -16,7 +16,7 @@ public class TestPlugin implements IPlugin{
         commandManager.register(new ICommand(){
             @Nonnull
             @Override
-            public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+            public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
                 return Result.success("Hello from a plugin!");
             }
     

@@ -1,5 +1,6 @@
 package net.gudenau.discord.images.magick;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import net.gudenau.discord.images.internal.NativeObject;
 import net.gudenau.discord.images.internal.NativeString;
@@ -101,6 +102,27 @@ public final class ExceptionInfo extends NativeObject{
     
     public long line(){
         return line(pointer);
+    }
+    
+    public RuntimeException createException(){
+        throw new RuntimeException(String.format(
+            "%s: %s", reason(), description()
+        ));
+    }
+    
+    @Nonnull
+    public Image check(@Nullable Image image){
+        if(severity() != 0){
+            if(image != null){
+                Image.DestroyImage(image);
+            }
+            throw createException();
+        }else{
+            if(image == null){
+                throw new RuntimeException("image was null when it should not have been");
+            }
+            return image;
+        }
     }
     
     long getPointer(){

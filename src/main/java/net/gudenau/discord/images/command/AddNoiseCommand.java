@@ -1,5 +1,6 @@
 package net.gudenau.discord.images.command;
 
+import io.sentry.Sentry;
 import java.util.List;
 import javax.annotation.Nonnull;
 import net.dv8tion.jda.api.entities.Member;
@@ -34,7 +35,7 @@ public class AddNoiseCommand implements IImageCommand{
         
         if(arguments.size() == 1){
             try(var exception = new ExceptionInfo()){
-                return Result.image(Effect.AddNoiseImage(image, type, exception));
+                return Result.image(exception.check(Effect.AddNoiseImage(image, type, exception)));
             }
         }
         
@@ -54,7 +55,7 @@ public class AddNoiseCommand implements IImageCommand{
         }
         
         try(var exception = new ExceptionInfo()){
-            return Result.image(Effect.AddNoiseImageChannel(image, colorChannel, type, exception));
+            return Result.image(exception.check(Effect.AddNoiseImageChannel(image, colorChannel, type, exception)));
         }
     }
     

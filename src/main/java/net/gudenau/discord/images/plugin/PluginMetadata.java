@@ -3,6 +3,7 @@ package net.gudenau.discord.images.plugin;
 import com.google.gson.annotations.Expose;
 import java.nio.file.Path;
 import java.util.Set;
+import javax.annotation.Nonnull;
 
 /**
  * The metadata for plugins.

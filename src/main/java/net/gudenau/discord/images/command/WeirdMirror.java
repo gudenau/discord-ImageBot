@@ -18,7 +18,7 @@ public class WeirdMirror{
         @Override
         public Result process(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments, @Nonnull Image image){
             try(var exception = new ExceptionInfo()){
-                var flip = Transform.FlipImage(image, exception);
+                var flip = exception.check(Transform.FlipImage(image, exception));
                 
                 try{
                     Image crop;
@@ -29,11 +29,11 @@ public class WeirdMirror{
                         cropGeometry.width(flip.columns());
                         cropGeometry.height(cropHeight);
                         
-                        crop = Transform.CropImage(
+                        crop = exception.check(Transform.CropImage(
                             flip,
                             cropGeometry,
                             exception
-                        );
+                        ));
                     }
                     try{
                         Composite.CompositeImage(
@@ -77,7 +77,7 @@ public class WeirdMirror{
         @Override
         public Result process(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments, @Nonnull Image image){
             try(var exception = new ExceptionInfo()){
-                var flip = Transform.FlipImage(image, exception);
+                var flip = exception.check(Transform.FlipImage(image, exception));
                 
                 try{
                     Image crop;
@@ -88,11 +88,11 @@ public class WeirdMirror{
                         cropGeometry.width(flip.columns());
                         cropGeometry.height(cropHeight);
                         
-                        crop = Transform.CropImage(
+                        crop = exception.check(Transform.CropImage(
                             flip,
                             cropGeometry,
                             exception
-                        );
+                        ));
                     }
                     try{
                         Composite.CompositeImage(
@@ -136,7 +136,7 @@ public class WeirdMirror{
         @Override
         public Result process(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments, @Nonnull Image image){
             try(var exception = new ExceptionInfo()){
-                var flop = Transform.FlopImage(image, exception);
+                var flop = exception.check(Transform.FlopImage(image, exception));
                 
                 try{
                     Image crop;
@@ -147,11 +147,11 @@ public class WeirdMirror{
                         cropGeometry.width(cropWidth);
                         cropGeometry.height(flop.rows());
                         
-                        crop = Transform.CropImage(
+                        crop = exception.check(Transform.CropImage(
                             flop,
                             cropGeometry,
                             exception
-                        );
+                        ));
                     }
                     try{
                         Composite.CompositeImage(
@@ -195,7 +195,7 @@ public class WeirdMirror{
         @Override
         public Result process(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments, @Nonnull Image image){
             try(var exception = new ExceptionInfo()){
-                var flop = Transform.FlopImage(image, exception);
+                var flop = exception.check(Transform.FlopImage(image, exception));
                 
                 try{
                     Image crop;
@@ -206,11 +206,11 @@ public class WeirdMirror{
                         cropGeometry.width(cropWidth);
                         cropGeometry.height(flop.rows());
                         
-                        crop = Transform.CropImage(
+                        crop = exception.check(Transform.CropImage(
                             flop,
                             cropGeometry,
                             exception
-                        );
+                        ));
                     }
                     try{
                         Composite.CompositeImage(

@@ -25,7 +25,7 @@ public class PrefixCommand{
     public static class Clear implements IAdminCommand{
         @Nonnull
         @Override
-        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
             if(!arguments.isEmpty()){
                 return Result.help(this);
             }
@@ -66,7 +66,7 @@ public class PrefixCommand{
     public static class Set implements IAdminCommand{
         @Nonnull
         @Override
-        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
             if(arguments.size() != 1){
                 return Result.help(this);
             }
@@ -106,7 +106,7 @@ public class PrefixCommand{
     public static class Get implements ICommand{
         @Nonnull
         @Override
-        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
             if(arguments.isEmpty()){
                 var prefix = MiscUtil.getGuildSettings(channel.getGuild()).prefix;
                 if(prefix == null){

@@ -30,7 +30,7 @@ public class HelpCommand implements ICommand{
     
     @Nonnull
     @Override
-    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
         if(arguments.size() > 1){
             return Result.help(this);
         }

@@ -43,7 +43,7 @@ public class EchoCommand implements IOwnerCommand, IMessageCommand{
     
     @Nonnull
     @Override
-    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
         return Result.error("Should not be reached.");
     }
     

@@ -25,7 +25,7 @@ public class PluginCommand{
     public static class Enumerate implements IOwnerCommand{
         @Nonnull
         @Override
-        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
             if(arguments.isEmpty()){
                 var builder = new StringBuilder("Loaded plugins:");
                 for(PluginMetadata plugin : PluginLoader.getPlugins()){
@@ -70,7 +70,7 @@ public class PluginCommand{
     public static class Info implements IOwnerCommand{
         @Nonnull
         @Override
-        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+        public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
             if(arguments.size() == 1){
                 PluginMetadata plugin = PluginLoader.getPlugin(arguments.get(0));
                 if(plugin == null){

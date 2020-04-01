@@ -38,7 +38,7 @@ public class DumpCommand implements IOwnerCommand{
     
     @Nonnull
     @Override
-    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull @Nonnull List<String> arguments){
+    public Result execute(@Nonnull TextChannel channel, @Nonnull Member author, @Nonnull List<String> arguments){
         if(!arguments.isEmpty()){
             return Result.help(this);
         }

@@ -39,7 +39,7 @@ public class SpinCommand implements IImageCommand{
             int FRAME_DELAY = 5;
             
             for(int i = 1; i < FRAME_COUNT; i++){
-                var result = Shear.RotateImage(image, i * (360F / FRAME_COUNT), exception);
+                var result = exception.check(Shear.RotateImage(image, i * (360F / FRAME_COUNT), exception));
                 
                 int width = result.columns();
                 int height = result.rows();

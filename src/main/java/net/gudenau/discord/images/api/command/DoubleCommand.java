@@ -68,7 +68,7 @@ public abstract class DoubleCommand implements IImageCommand{
                 }
     
                 try(var exception = new ExceptionInfo()){
-                    var newImage = function.invoke(image, double1, exception);
+                    var newImage = exception.check(function.invoke(image, double1, exception));
                     try{
                         return Result.image(newImage);
                     }finally{
@@ -106,7 +106,7 @@ public abstract class DoubleCommand implements IImageCommand{
                 }
                 
                 try(var exception = new ExceptionInfo()){
-                    var newImage = function.invoke(image, double1, exception);
+                    var newImage = exception.check(function.invoke(image, double1, exception));
                     try{
                         return Result.image(newImage);
                     }finally{
@@ -153,7 +153,7 @@ public abstract class DoubleCommand implements IImageCommand{
                 }
                 
                 try(var exception = new ExceptionInfo()){
-                    var newImage = function.invoke(image, double1, double2, exception);
+                    var newImage = exception.check(function.invoke(image, double1, double2, exception));
                     try{
                         return Result.image(newImage);
                     }finally{
