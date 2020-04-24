@@ -136,7 +136,7 @@ public class CommandManager implements ICommandManager{
             new UpdateAvatarCommand()
         );
     
-        register(new MessageCommand("invite", "Get's the URL to invite this bot!", "Thanks for the interest!\nhttps://discordapp.com/oauth2/authorize?client_id=532402004568440852&scope=bot&permissions=-1"));
+        register(new MessageCommand("invite", "Get's the URL to invite this bot!", "Thanks for the interest!\nhttps://invite.imagebot.gudenau.net/"));
     
         register(new AvatarCommand());
         register(new GuildCommand());
@@ -230,6 +230,7 @@ public class CommandManager implements ICommandManager{
      * */
     private void registerAliases(){
         registerAlias("e", "emoji");
+        registerAlias("emote", "emoji");
         registerAlias("a", "avatar");
         registerAlias("g", "guild");
         registerAlias("i", "info");

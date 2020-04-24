@@ -35,16 +35,7 @@ public class HelpCommand implements ICommand{
             return Result.help(this);
         }
         if(arguments.isEmpty()){
-            List<IMessageCommand> commands = new ArrayList<>(commandMap.values());
-            commands.sort(Comparator.comparing(IMessageCommand::getName));
-            
-            var builder = new StringBuilder("Commands:");
-            for(IMessageCommand command : commands){
-                if(command.isAvailable(channel, author)){
-                    builder.append("\n**").append(command.getName()).append("**\n > ").append(command.getHelp());
-                }
-            }
-            return Result.success(builder.toString());
+            return Result.success("For a complete listing of commands see https://help.imagebot.gudenau.net/");
         }else{
             var commandName = arguments.get(0);
             var command = commandManager.getCommand(commandName);

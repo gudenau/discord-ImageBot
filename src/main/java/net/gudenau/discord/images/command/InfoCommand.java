@@ -19,7 +19,9 @@ public class InfoCommand implements ICommand{
         return Result.success(
             "Created by gudenau\n" +
             "Issues: https://github.com/gudenau/discord-ImageBot/issues\n" +
-            "Help: https://todo\n" +
+            "Help: https://help.imagebot.gudenau.net/\n" +
+            "Source: https://imagebot.gudenau.net/\n" +
+            "Invite: https://invite.imagebot.gudenau.net/\n" +
             "Version: " + DiscordImages.BOT_VERSION
         );
     }
